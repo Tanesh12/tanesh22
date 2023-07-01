@@ -1,0 +1,15 @@
+import heapq
+
+def find_k_largest_elements(nums, k):
+    heap = []
+    for num in nums:
+        heapq.heappush(heap, num)
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    return heap
+  
+numbers = [3, 1, 5, 2, 8, 7]
+k_largest = find_k_largest_elements(numbers, 3)
+print("Original Numbers:", numbers)
+print("K Largest Elements:", k_largest)
